@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f7fb;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 2rem 5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.results div {
+    display: flex;
+    gap: 7rem;/*Define espaçamento einterno entre as imagens das mãos*/
+    justify-content: center;/*Centraliza na horizontal*/
+
+    img{/*Pega toda img que está dentro da classe result e aplica o tamanho de 100px*/
+        width: 100px;
+    }
+}
+.user-result {
+    transform:rotate(90deg) ;/*Gira a imagem 90 gruas sem a nescessidade de editor de fotos*/
+}
+.computer-result {
+    transform:rotate(-90deg) rotateY(180deg);/*També gira a imagem em 90 graus, porém como a mão tem que ficar de frente para outra, e ambas com o polegar para cima, então para colocar uma de frente para outra usei o -90 deg, ou seja, o oposto de 90deg, para ela ficar com o polegar para cima, usei o rotate Y, ou seja vai rotacionar a imagem no eixo Y em 180 deg*/
+    
+}
+.result-text {
+    text-align: center;
+    color: #7d2ae8;
+    font-weight: bold;
+    margin: 1.5rem 0; /*Define espaçamento de 1.5 em cima e embaixo e 0 dos lados*/
+    font-size: 2rem;
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    p{
+        color: #7d2ae8;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+.option-image {
+display: flex;
+flex-direction: column;
+text-align: center;
+cursor: pointer;
+opacity: 0.5;/*Deixa a imagem opaca*/
+transition: 0.5s ease;/*Deixa a transição mais suave, e definida para meio segundo*/
+
+    img{
+        width: 50px;
+    }
+}
+.option-image:hover{
+    opacity: 1;
+}
+.option-image:active {
+    opacity: 1;
+}
