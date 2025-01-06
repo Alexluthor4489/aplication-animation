@@ -12,6 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #f6f7fb;
+    font-family: 'Chakra Petch';
 }
 
 .container {
@@ -31,10 +32,10 @@ body {
         width: 100px;
     }
 }
-.user-result {
+.user-result img{
     transform:rotate(90deg) ;/*Gira a imagem 90 gruas sem a nescessidade de editor de fotos*/
 }
-.computer-result {
+.computer-result img{
     transform:rotate(-90deg) rotateY(180deg);/*També gira a imagem em 90 graus, porém como a mão tem que ficar de frente para outra, e ambas com o polegar para cima, então para colocar uma de frente para outra usei o -90 deg, ou seja, o oposto de 90deg, para ela ficar com o polegar para cima, usei o rotate Y, ou seja vai rotacionar a imagem no eixo Y em 180 deg*/
     
 }
@@ -44,6 +45,26 @@ body {
     font-weight: bold;
     margin: 1.5rem 0; /*Define espaçamento de 1.5 em cima e embaixo e 0 dos lados*/
     font-size: 2rem;
+}
+.container.start .user-result{
+    transform-origin: left;/*Usa-se para definir o ponto de rotação. Como eu quero que a mão faça um movimento natural de subir e abaixar, então defini o eixo de rotação da mão esquerda no ponto mais a esquerda e para mão direita vai ser exatamente ao contrário como pode ser observado abaixo na animação da mão direita*/
+    animation: userMoves 0.7s ease infinite;/*Vai ser responsáveis pela configuração que vai ser aplicada no Keyframes. Primeiro devemos definir qual keyframe que vamos chamar => userMoves, depois quanto tempo que a animação vai durar, seguida do tipo desta transformação => ease e por ultimo vamos usar oinfinite para definir que essa animação vai ser infinita*/
+}
+
+@keyframes userMoves {/*Os Keyframes são animações que criamos e usamos onde quisermos. Para criar-mos precisamos dar um nome a eles e no nosso caso vai ser userMoves*/
+    50% {/*Definindo que o movimento vai começar a partir de 50% e a aprtir disso ele vai fazer um movimento de rotação de 10 gruas.*/
+        transform: rotate(10deg);
+    }
+
+}
+.container.start .computer-result{
+    transform-origin: right;
+    animation:computerMoves 0.7s ease infinite ;
+}
+@keyframes computerMoves{
+    50%{
+        transform: rotate(-10deg);
+    }
 }
 .options {
     display: flex;
